@@ -34,12 +34,12 @@ function setupForm() {
             document.getElementById("photoNum").onchange = getEstimate;
             document.getElementById("photoHrs").onchange = getEstimate;
             document.getElementById("photoDist").onchange = getEstimate;
-            document.getESlementById("makeBook").onchange = getEstimate;
+            document.getElementById("makeBook").onchange = getEstimate;
             document.getElementById("photoRights").onchange = getEstimate
 }
 
 // estimate the total cost of the service
-      function getEstimate () {
+      function getEstimate() {
             let totalCost = 0;
             let photographers = document.getElementById("photoNum").value;
             let hours = document.getElementById("photoHrs").value;
@@ -51,7 +51,7 @@ function setupForm() {
             totalCost += photographers * hours * EMP_COST;
 
             // Add the cost of distance per photographer per mile
-            totalCost =+ photographers * distance * TRAVEL_COST;
+            totalCost += photographers * distance * TRAVEL_COST;
 
             // Add the cost of the book if purchased
             totalCost += buyBook ? BOOK_COST: 0;
